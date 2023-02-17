@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Project8.Models.Transaction>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Transaction_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CVC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visa_ExpireDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Action)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transaction_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CVC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visa_ExpireDate)
+        </td>
+        <td>
+            @{
+                if (item.User_Action == true) { }
+
+            }
+            @Html.DisplayFor(modelItem => item.User_Action)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Transaction_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Transaction_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Transaction_Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -41,10 +41,6 @@
     
 </style>
 <h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <div style="width:80vw;overflow:scroll; ">
         <table class="table table-striped table-bordered " style="overflow: scroll;">
             <tr>
@@ -179,15 +175,14 @@
                     <td>
                        @if (item.IsAccepted == true)
                        {
-
-
-<label class="badge badge-complete" style="background-color: #28a745; height: 30px; display: grid; align-items: center; color: white; ">Accepted</label>
+                            <label class="badge badge-complete" style="background-color: #28a745; height: 30px; display: grid; align-items: center; color: white; ">Accepted</label>
                        }
                        else if (item.IsAccepted == false)
                        {
                     <span class="badge badge-complete" style="background-color: #dc3545; height: 30px; display: grid; align-items: center;color:white; ">Regected</span>
                        }
-                       else { <span class="badge badge-pending" style="background-color: orange; height: 30px; display: grid; align-items: center; color: white; ">Pending</span>}
+                       else 
+                       { <span class="badge badge-pending" style="background-color: orange; height: 30px; display: grid; align-items: center; color: white; ">Pending</span>}
                         @*@Html.DisplayFor(modelItem => item.IsAccepted)*@
                     </td>
                     <td>

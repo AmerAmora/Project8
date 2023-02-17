@@ -1,13 +1,9 @@
 ﻿@model Project8.Models.Courses_Offered
-
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
 <h2>Create</h2>
-
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -28,9 +24,8 @@
     <div class="form-group">
         @Html.LabelFor(model => model.start_time, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <input type="text" name="start_Hour" id="start_Hour" />
-            <input type="text" name="start_min" id="start_min" value="00" />
-
+            <input type="number" max="24" min="1" name="start_Hour" id="start_Hour" />
+            <input type="number" max="60" min="0" name="start_min" id="start_min" value="00" />
             @Html.ValidationMessageFor(model => model.start_time, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -38,8 +33,8 @@
     <div class="form-group">
         @Html.LabelFor(model => model.end_time, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <input type="text" name="end_Hour" id="end_Hour" />
-            <input type="text" name="end_min" id="end_min" value="00" />
+            <input type="number" max="24" min="1" name="end_Hour" id="end_Hour" />
+            <input type="number" max="60" min="0" name="end_min" id="end_min" value="00" />
             @Html.ValidationMessageFor(model => model.end_time, "", new { @class = "text-danger" })
         </div>
     </div>

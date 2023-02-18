@@ -24,14 +24,16 @@ namespace Project8.Models
     
         public int Major_Id { get; set; }
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = "Major Name")]
         public string Major_Name { get; set; }
         [Required]
-        [Display(Name = "Description")]
+        [Display(Name = "Major Description")]
         public string Major_Description { get; set; }
         [Required]
-        [Display(Name = "Image")]
+        [Display(Name = "Major Image")]
         public string Major_Image { get; set; }
+        [Required]
+        [Display(Name = "Major Price")]
         public Nullable<int> Price { get; set; }
         public Nullable<int> College_Id { get; set; }
     

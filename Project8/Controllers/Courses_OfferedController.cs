@@ -12,6 +12,7 @@ namespace Project8.Controllers
 {
     public class Courses_OfferedController : Controller
     {
+        
         private Project8Entities db = new Project8Entities();
 
         // GET: Courses_Offered

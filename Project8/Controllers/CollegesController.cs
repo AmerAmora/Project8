@@ -10,6 +10,8 @@ using Project8.Models;
 
 namespace Project8.Controllers
 {
+    [Authorize(Roles = "Admin")]
+
     public class CollegesController : Controller
     {
         private Project8Entities db = new Project8Entities();

@@ -13,6 +13,7 @@ using Project8.Models;
 
 namespace Project8.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AspNetUsersController : Controller
     {
         private Project8Entities db = new Project8Entities();

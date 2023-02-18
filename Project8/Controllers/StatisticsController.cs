@@ -6,7 +6,9 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using Project8.Models;
 namespace Project8.Controllers
-{   
+{
+    [Authorize(Roles = "Admin")]
+
     public class StatisticsController : Controller
     {
         // GET: Statistics

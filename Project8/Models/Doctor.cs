@@ -29,7 +29,13 @@ namespace Project8.Models
         [Required]
         [Display(Name = "Doctor Image")]
         public string Doctor_Image { get; set; }
+        [Required]
+        [Display(Name = "Doctor Phone")]
+        [RegularExpression("((079)|(078)|(077)){1}[0-9]{7}", ErrorMessage = "Isn't a Jordanian Number.")]
         public string Doctor_Phone { get; set; }
+        [Required]
+        [Display(Name = "Doctor Email")]
+        [EmailAddress]
         public string Doctor_Email { get; set; }
         public string User_ID { get; set; }
     

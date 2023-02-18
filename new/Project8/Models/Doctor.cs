@@ -11,7 +11,8 @@ namespace Project8.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Doctor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,8 @@ namespace Project8.Models
         }
     
         public int Doctor_Id { get; set; }
+        [Required]
+        [Display(Name ="Doctor Name")]
         public string Doctor_Name { get; set; }
         public string Doctor_Image { get; set; }
         public string Doctor_Phone { get; set; }

@@ -21,17 +21,22 @@ namespace Project8.Models
             this.Courses_Offered = new HashSet<Courses_Offered>();
             this.Courses1 = new HashSet<Cours>();
         }
-    
+        [Required]
+        [Display(Name = "Course Name")]
         public int Course_Id { get; set; }
         [Required]
         [Display(Name = "Course Name")]
         public string Course_Name { get; set; }
         [Required]
         [Display(Name = "Course Hours")]
+        [Range(1, 4,
+        ErrorMessage = "Value for {0} must be between {1} and {2}.")]
         public Nullable<int> Number_Of_Hours { get; set; }
         [Required]
         [Display(Name = "Course Description")]
         public string Course_Description { get; set; }
+        [Required]
+        [Display(Name = "Major Name")]
         public Nullable<int> Major_Id { get; set; }
         public string syllabus { get; set; }
         public Nullable<int> dependent_Course { get; set; }
